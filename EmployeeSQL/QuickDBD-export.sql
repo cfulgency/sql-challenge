@@ -2,6 +2,18 @@
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/UERDzk
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
+-- Data Engineering
+-- Drop Tables if Existing
+
+DROP TABLE IF EXISTS departments;
+DROP TABLE IF EXISTS dept_no;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS titles;
+
+-- Exported from QuickDBD: Specifying Data Types, Primary Keys, Foreign Keys & Constraints
+-- Import CSV Files Into Corresponding SQL Table
 
 CREATE TABLE "departments" (
     "dept_no" VARCHAR   NOT NULL,
@@ -64,4 +76,3 @@ REFERENCES "titles" ("emp_title_id");
 
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
-
